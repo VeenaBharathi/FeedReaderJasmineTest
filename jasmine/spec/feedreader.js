@@ -31,20 +31,20 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it("urls are not empty", function(){
-            for(let feed of allFeeds){
+        it("urls are not empty", function() {
+            for(let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBe('');
                 expect(feed.url).not.toBe(null);
             }
-         });
+        });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it("names are not empty", function(){
+        it("names are not empty", function() {
             for(let feed of allFeeds){
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe('');
@@ -62,9 +62,9 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it("is hidden by default", function(){
+        it("is hidden by default", function() {
             expect($('body.menu-hidden').length).toBe(1); //=1 implies class exist. =0 implies selector with class doesnt exist      
-         });
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -72,25 +72,25 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-        it("is shown when clicked", function(){
+        it("is shown when clicked", function() {
            $('.icon-list').trigger('click');
            expect($('body.menu-hidden').length).toBe(0); //=1 implies class exist. =0 implies selector with class doesnt exist      
            $('.icon-list').trigger('click');
-         });
+        });
 
     }); //close The menu suite    
 
     
 
     /* TODO: Write a new test suite named "Initial Entries" */
-    describe("Initial Entries",function(){
+    describe("Initial Entries",function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        beforeEach(function(done){
+        beforeEach(function(done) {
             
             // async functions are those that donot wait till completion and next line is executed. If we need to wait for completion
             // specify callback function such as done() so that once done() is executed we know that async fn got completed.
@@ -100,18 +100,38 @@ $(function() {
             // loadFeed calls done() once completed. when done() is returned, start executing the fnc in 'it' test.
         });
 
-         it("atleast one is present", function(){
+        it("atleast one is present", function() {
            expect($('.feed').length > 0).toBe(true);
            // done() not needed since no async function is called to wait till completion
-         });
-
+        });
     }); //close Initial Entries suite  
 
+    
+
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe("New Feed Selection", function() {
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        var previous;
+         // loading feed 3
+        beforeEach(function(done) {
+            loadFeed(3, done);
+        });
+
+         // once feed 3 loads, this executes and loads feed 2
+        it("content changes", function(done) {
+            previous  = $('.header-title').html();
+            loadFeed(2,done);  
+         });
+        
+         // once feed 2 loads, this executed and checks expectation
+        afterEach(function() {
+            let newContent = $('.header-title').html();           
+            expect(newContent).not.toBe(previous);  
+        });
+    }); //close New Feed Selection suite       
 
 }());  //close $ function and call it
