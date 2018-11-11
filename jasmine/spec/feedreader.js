@@ -63,9 +63,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it("is hidden by default", function(){
-            expect($('body.menu-hidden').length).toBe(1); //=1 implies class exist. =0 implies selector with class doesnt exist
-         
-
+            expect($('body.menu-hidden').length).toBe(1); //=1 implies class exist. =0 implies selector with class doesnt exist      
          });
 
          /* TODO: Write a test that ensures the menu changes
@@ -73,6 +71,12 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+        it("is shown when clicked", function(){
+           $('.icon-list').trigger('click');
+           expect($('body.menu-hidden').length).toBe(0); //=1 implies class exist. =0 implies selector with class doesnt exist      
+           $('.icon-list').trigger('click');
+         });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
