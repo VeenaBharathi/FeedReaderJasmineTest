@@ -13,24 +13,25 @@ Students should use this [rubric](https://review.udacity.com/#!/projects/2696458
 
 ## Instructions
 
-*Project Title
-This is a project to test Feed Reader Application Test Using Jasmine. There are 7 test cases in 4 suites that automatically tests the applciation each time it is loaded.
+Project Title
+* This is a project to test Feed Reader Application Test Using Jasmine. There are 7 test cases in 4 suites that automatically tests the applciation each time it is loaded.
 
 Getting Started
-The code can be downloaded from following git hub location-
+* The code can be downloaded from following git hub location-
 https://github.com/VeenaBharathi/FeedReaderJasmineTest.git
 
-*Prerequisites
-1. Git Bash
-2. Browser
-3. Sublime Test2
+Prerequisites
+* Git Bash
+* Browser
+* Sublime Test2
 
-*Install steps
-i) git clone <above repository> into any local folder.
-ii) The application with Jasmine test suite is ready to use.
-iii) Right click on index.html and open with chrome and you can view jasmine test results!
+Install steps
+* git clone <above repository> into any local folder.
+* The application with Jasmine test suite is ready to use.
+* Right click on index.html and open with chrome and you can view jasmine test results!
 
-*Instructions
+Instructions
+
 1.RSS Feeds Suite. It has 3 test scenarios to be verified.
 - Atleast one feed is present is verified using "are defined" test.
 - Verify URL for feeds are not empty using "urls are not empty" test.
@@ -47,8 +48,8 @@ iii) Right click on index.html and open with chrome and you can view jasmine tes
 4. New Feed Selection Suite. It has 1 scenario to be verified. 
 -  Ensures when a new feed is loaded by the loadFeed function that the content actually changes using "content changes" test.
 
-*Built With
-1. Sublime Text Editor
+Built With
+* Sublime Text Editor
 
 ## Dependencies
 - "jasmine/lib/jasmine-2.1.2/jasmine.css"
@@ -61,13 +62,13 @@ iii) Right click on index.html and open with chrome and you can view jasmine tes
 
 ## Contributing
 
-* Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Contributing
+* Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-* Versioning
-We use GitHub for versioning.
+Versioning
+* We use GitHub for versioning.
 
-* Authors
+Authors
 1. Richard - Initial work
 2. Veena - Modified Project
 
