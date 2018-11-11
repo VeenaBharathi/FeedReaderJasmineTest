@@ -27,9 +27,9 @@ var allFeeds = [
  * Reader API is loaded asynchonously and will then call this
  * function when the API is loaded.
  */
-function init() {
+function init(done) {
     // Load the first feed we've defined (index of 0).
-    loadFeed(0);
+    loadFeed(0, done);
 }
 
 /* This function performs everything necessary to load a
