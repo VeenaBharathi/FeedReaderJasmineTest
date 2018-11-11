@@ -78,14 +78,34 @@ $(function() {
            $('.icon-list').trigger('click');
          });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    }); //close The menu suite    
 
+    
+
+    /* TODO: Write a new test suite named "Initial Entries" */
+    describe("Initial Entries",function(){
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        beforeEach(function(done){
+            
+            // async functions are those that donot wait till completion and next line is executed. If we need to wait for completion
+            // specify callback function such as done() so that once done() is executed we know that async fn got completed.
+
+            // checks if callback method which is here done() is called. 
+                loadFeed(0, done);
+            // loadFeed calls done() once completed. when done() is returned, start executing the fnc in 'it' test.
+        });
+
+         it("atleast one is present", function(){
+           expect($('.feed').length > 0).toBe(true);
+           // done() not needed since no async function is called to wait till completion
+         });
+
+    }); //close Initial Entries suite  
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -93,7 +113,5 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-
-}); //close The menu suite
 
 }());  //close $ function and call it
