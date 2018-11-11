@@ -37,15 +37,15 @@ Instructions
 - Verify URL for feeds are not empty using "urls are not empty" test.
 - Verify name for feeds are not empty using "names are not empty" test.
 
-2. The menu Suite. It has 2 scenarios to be verified.
+2.The menu Suite. It has 2 scenarios to be verified.
 - Ensures the menu element is hidden by default using  "is hidden by default" test.
 - Ensures the menu changes visibility when the menu icon is clicked using "is shown when clicked" test.
 
-3. Initial Entries Suite. It has 1 scenario to be verified.
+3.Initial Entries Suite. It has 1 scenario to be verified.
 - Ensures when the loadFeed function is called and completes its work, there is at least single .entry element within the .feed container using 
   "atleast one is present" test.
   
-4. New Feed Selection Suite. It has 1 scenario to be verified. 
+4.New Feed Selection Suite. It has 1 scenario to be verified. 
 -  Ensures when a new feed is loaded by the loadFeed function that the content actually changes using "content changes" test.
 
 Built With
